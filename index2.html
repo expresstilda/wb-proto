@@ -22,7 +22,7 @@
     .header-cta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .header-cta .phone { font-size: 14px; font-weight: 600; padding: 10px 16px; border: 1px solid #e5e5e5; border-radius: 8px; text-decoration: none; color: #171717; }
     .header-cta .phone:hover { background: #fafafa; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; border: none; transition: background .2s; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: default; text-decoration: none; border: none; transition: background .2s; }
     .btn-outline { background: transparent; border: 1px solid #e5e5e5; color: #171717; }
     .btn-primary { background: #171717; color: #fff; }
     .btn-primary:hover { background: #262626; }
@@ -38,9 +38,8 @@
     .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
     .hero-tabs { display: flex; gap: 8px; flex-wrap: nowrap; margin-bottom: 24px; }
-    .hero-tab { padding: 8px 14px; border-radius: 8px; border: 1px solid #e5e5e5; background: #fff; color: #525252; font-size: 13px; cursor: default; white-space: nowrap; flex-shrink: 0; }
-
-.hero h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin: 0 0 20px; max-width: 560px; }
+    .hero-tab { padding: 8px 14px; border-radius: 8px; border: 1px solid #e5e5e5; background: #fff; color: #525252; font-size: 13px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+    .hero h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin: 0 0 20px; max-width: 560px; }
     .hero-desc { color: #525252; font-size: 16px; margin-bottom: 32px; max-width: 520px; }
     .hero-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 32px; list-style: none; padding: 0; }
     @media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
@@ -238,7 +237,7 @@
         <div class="hero-tabs">
           <span class="hero-tab">Расчёт комплекта за 2 минуты</span>
           <span class="hero-tab">Под вашу планировку</span>
-          <span class="hero-tab">Договор и документы</span>
+          <span class="hero-tab">100% активация</span>
         </div>
         <h1>Мебель для ПВЗ Wildberries по новому брендбуку 2026 года напрямую от производителя</h1>
         <p class="hero-desc">Подберём комплект под ваше помещение, дадим рекомендации по расстановке и сразу посчитаем стоимость. При необходимости учтём нестандартные размеры и сложные планировки.</p>
@@ -263,7 +262,6 @@
     </div>
   </div>
 </section>
-
 
 
 
@@ -608,7 +606,8 @@
       this.parentElement.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       this.classList.add('active');
     });
-  });
+  });
+
   // Assortment selection
   const selected = new Map();
   const chipsContainer = document.getElementById('selectedChips');
